@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../utils/api";
 import NoteItem from "./NoteItem";
+import LoadingIndicator from "./LoadingIndicator";
 import "../styles/notes.css";
 
 const Archive = () => {
@@ -32,7 +33,7 @@ const Archive = () => {
     <div className="archive-container">
       <h2 className="archive-title">Archived Notes</h2>
       {loading ? (
-        <p className="loading-text">Loading...</p>
+        <LoadingIndicator />
       ) : (
         <div className="note-list">
           {archivedNotes.map((note) => (

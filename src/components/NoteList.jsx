@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../utils/api";
 import NoteItem from "./NoteItem";
 import Search from "./search";
+import LoadingIndicator from "./LoadingIndicator";
 import "../styles/notes.css";
 
 const NoteList = () => {
@@ -49,7 +50,7 @@ const NoteList = () => {
         <Search onSearch={handleSearch} />
       </div>
       {loading ? (
-        <p className="loading-text">Loading...</p>
+        <LoadingIndicator />
       ) : (
         <div className="note-list">
           {filteredNotes.map((note) => (
